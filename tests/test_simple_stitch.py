@@ -1,8 +1,10 @@
 import os
-import pytest
-import cv2
-from ground_control.simple_stitch import stitch_images
 from pathlib import Path
+
+import cv2
+import pytest
+
+from ground_control.simple_stitch import stitch_images
 
 IMAGES_DIR = Path(os.environ["IMAGES_DIR"])
 
