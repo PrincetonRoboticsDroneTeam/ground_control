@@ -6,8 +6,15 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "opencv-python>=4.10.0.84",
+]
+
+
+[project.optional-dependencies]
+test = [
     "pytest>=8.3.3",
-    "python-dotenv>=1.0.1",
+    "pytest-env>=1.1.5",
+]
+dev = [
     "ruff>=0.6.7",
 ]
 
@@ -17,4 +24,3 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 packages = { find = { where = ["src"] } }
-

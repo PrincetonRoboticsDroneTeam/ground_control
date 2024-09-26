@@ -1,7 +1,10 @@
+import os
 import pytest
 import cv2
 from ground_control.simple_stitch import stitch_images
-from ground_control import IMAGES_DIR
+from pathlib import Path
+
+IMAGES_DIR = Path(os.environ["IMAGES_DIR"])
 
 
 @pytest.fixture
