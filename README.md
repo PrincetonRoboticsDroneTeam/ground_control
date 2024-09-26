@@ -14,8 +14,8 @@ cd ground_control
 ### 2. Create a Virtual Environment (Recommended)
 
 ```bash
-python -m venv env
-source env/bin/activate
+python -m venv .venv
+source .venv/bin/activate
 ```
 
 ### 3. Install Dependencies
