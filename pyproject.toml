@@ -43,7 +43,7 @@ testpaths = [
 
 
 [tool.pytest_env]
-IMAGES_DIR = {value = "data/images", skip_if_set = true}
+DATA_DIR = {value = "data", skip_if_set = true}
 
 
 [tool.mypy]
