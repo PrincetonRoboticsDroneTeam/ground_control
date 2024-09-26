@@ -7,7 +7,8 @@ def read_images(image_paths):
     for path in image_paths:
         image = cv2.imread(path)
         if image is None:
-            raise ValueError(f"Could not read image from {path}")
+            error_message = f"Could not read image from {path}"
+            raise ValueError(error_message)
         images.append(image)
     return images
 
@@ -17,7 +18,8 @@ def stitch_images(images):
     stitcher = cv2.Stitcher.create()
     status, stitched_image = stitcher.stitch(images)
     if status != cv2.Stitcher_OK:
-        raise RuntimeError("Error in stitching images")
+        error_message = "Error in stitching images"
+        raise RuntimeError(error_message)
     return stitched_image
 
 
@@ -31,10 +33,3 @@ def simple_stitch(image_paths, output_path):
     images = read_images(image_paths)
     stitched_image = stitch_images(images)
     save_image(output_path, stitched_image)
-
-
-if __name__ == "__main__":
-    image_paths = ["images/test1/image1.png", "images/test1/image2.png"]
-    output_path = "images/test1/stitched.png"
-    simple_stitch(image_paths, output_path)
-
