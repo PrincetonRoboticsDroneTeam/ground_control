@@ -16,7 +16,14 @@ test = [
 ]
 dev = [
     "ruff>=0.6.7",
+    "pytest>=8.3.3",
+    "pytest-env>=1.1.5",
 ]
+
+
+[tool.pytest_env]
+IMAGES_DIR = {value = "data/images", skip_if_set = true}
+
 
 [build-system]
 requires = ["setuptools", "wheel"]
